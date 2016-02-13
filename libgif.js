@@ -459,6 +459,7 @@
         if (typeof options.auto_play == 'undefined')
             options.auto_play = (!gif.getAttribute('rel:auto_play') || gif.getAttribute('rel:auto_play') == '1');
 
+        var playbackSpeed = (options.hasOwnProperty('playback_speed') ? options.playback_speed : 1);
         var onEndListener = (options.hasOwnProperty('on_end') ? options.on_end : null);
         var loopDelay = (options.hasOwnProperty('loop_delay') ? options.loop_delay : 0);
         var overrideLoopMode = (options.hasOwnProperty('loop_mode') ? options.loop_mode : 'auto');
@@ -734,6 +735,8 @@
                     var delay = frames[i].delay * 10;
                     if (!delay) delay = 100; // FIXME: Should this even default at all? What should it be?
 
+										delay /= playbackSpeed;
+
                     var nextFrameNo = getNextFrameNo();
                     if (nextFrameNo === 0) {
                         delay += loopDelay;
@@ -915,6 +918,8 @@
             pause: player.pause,
             move_relative: player.move_relative,
             move_to: player.move_to,
+
+						set_playback_speed : function(new_playback_speed) { playbackSpeed = new_playback_speed; },
 
             // getters for instance vars
             get_playing      : function() { return player.playing },

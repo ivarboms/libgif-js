@@ -54,6 +54,7 @@ Of note to the developer, libjs.gif contains a class SuperGif, which can be used
 * **auto\_play** -			Optional. Same as the rel:auto_play attribute above, this arg overrides the img tag info.
 * **max\_width** -			Optional. Scale images over max\_width down to max_width. Helpful with mobile.
 * **rubbable** -			Optional. Make it rubbable.
+* **playback_speed** -			Optional. Set playback speed (1 is default).
 * **on_end** -				Optional. Add a callback for when the gif reaches the end of a single loop (one iteration). The first argument passed will be the gif HTMLElement.
 * **loop_delay** -			Optional. The amount of time to pause (in ms) after each single loop (iteration).
 * **progressbar_height** -			Optional. The height of the progress bar.
@@ -71,6 +72,7 @@ Of note to the developer, libjs.gif contains a class SuperGif, which can be used
 * **pause** -				Stop playing the gif
 * **move_to(i)** -		Move to frame i of the gif
 * **move_relative(i)** -	Move i frames ahead (or behind if i < 0)
+* **set_playback_speed(speed)** -	Set playback speed (1 is standard speed).
 
 #### getters
 * **get_canvas** - The canvas element that the gif is playing in. Handy for assigning event handlers to.
