@@ -723,12 +723,12 @@
                         doStep();
                     } else {
                         stepping = false;
-                        playing = false;
+                        player.playing = false;
                     }
                 };
 
                 var doStep = function () {
-                    stepping = playing;
+                    stepping = player.playing;
                     if (!stepping) return;
 
                     stepFrame(1);
@@ -771,12 +771,12 @@
             };
 
             var play = function () {
-                playing = true;
+                player.playing = true;
                 step();
             };
 
             var pause = function () {
-                playing = false;
+                player.playing = false;
             };
 
 
